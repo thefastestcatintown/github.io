@@ -1,0 +1,133 @@
+<!-- muss am Schluss wohl ein php File sein -->
+<!DOCTYPE html>
+<html lang = "de">
+
+	<!-- HEAD -->
+	<!-- HEAD -->
+	<!-- HEAD -->
+	<head>
+		<meta charset="utf-8"/>
+		<title>ShineYoga</title>
+		<link rel = "stylesheet" href = "css/style.css">
+		<link rel = "stylesheet" href = "css/contact.css">
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;900&display=swap" rel="stylesheet">
+	</head>
+
+	<!-- BODY -->
+	<!-- BODY -->
+	<!-- BODY -->
+	<body onLoad = "document.getElementById(showOnload).click()" onresize = "isResponsive()">
+	<!--<body onLoad = "document.getElementById('sayHi').click()" onresize = "isResponsive()">-->
+
+		<!-- check if javascript is installed -->
+		<div class="checkJavascript" id = "isJavascript"><p>"Seems like you have not installed Java Script"</p></div>
+
+
+		<!-- NAVIGATION -->
+		<!-- NAVIGATION -->
+		<!-- NAVIGATION -->
+		<!--is just active in mobile view-->
+		<div class = "hide" id = "nav">
+			<div id ="nav_mobile">
+				<div class = "nav_button" id = "menubar0"></div>
+				<div class = "nav_button" id = "menubar1"></div>
+				<div class = "nav_button" id = "menubar2"></div>
+			</div>
+			<div id = "nav_buttons">
+			</div>
+		</div>
+
+		<!-- Navigation -->
+		<!-- gets implemented in changeNavigation.js -->
+
+
+		<!-- change dynamic text in changeHome.js und changeVars.js -->
+		<!-- dynamic Text is completely created in JS-->
+
+    	<div class = "hide" id = "dynamicText">
+		</div>
+
+
+		<!-- footer looks everywhere the same, so we can create it in html. The values get implemented with js tho-->
+
+		<!-- FOOTER -->
+		<!-- FOOTER -->
+		<!-- FOOTER -->
+		<div class = "hide background" id = "footer" >
+
+			<!-- SAYHI -->
+			<!-- SAYHI -->
+			<!-- SAYHI -->
+			<button id="sayHi" onclick="getElementById('dynamicText').innerHTML=show(sayHi, true), supress()">Say hi!
+			</button>
+
+			<!-- InstaFollow -->
+			<!-- InstaFollow -->
+			<!-- InstaFollow -->
+			<button id="instaFollow"> <a href="https://www.instagram.com/shineyoga_/" target="_blank" rel="noopener noreferrer">Instagram</a>
+			</button>
+
+			<!-- Impressum -->
+			<!-- Impressum -->
+			<!-- Impressum -->
+			<button id="impressumButton" onclick="getElementById('dynamicText').innerHTML=show(impressum, true)">
+				<a href = "#cardWrapper"> Legal Notice & Privacy Policy </a>
+			</button>
+
+			<!-- Copyright -->
+			<!-- Copyright -->
+			<!-- Copyright -->
+			<p id = "copyright"></p>
+		</div>
+
+		<!-- JavaScript -->
+		<!-- JavaScript -->
+		<!-- JavaScript -->
+		<script src="src/init.js"></script>
+		<script src="src/change/changeVars.js"></script>
+		<script src="src/change/changeNavigation.js"></script>
+		<script src="src/change/changeHome.js"></script>
+		<script src="src/change/changeFooter.js"></script>
+		<script src="src/docReady.js"></script>
+		<script src="test.js"></script>
+		<script>
+			/*TEST NEW STUFF HERE*/
+			/*TEST NEW STUFF HERE*/
+			/*TEST NEW STUFF HERE*/
+
+			function reply_click(id){
+				console.log("landscape" + isLandscape);
+				var nav_titles = document.getElementsByClassName("nav_titles");
+					for( var i = 0; i<nav_titles.length; i++) nav_titles[i].classList.remove("active");
+						if(isLandscape) document.getElementById(id).classList.add("active");
+      	}
+
+		</script>
+
+				<script>
+			/*TEST NEW STUFF HERE*/
+			/*TEST NEW STUFF HERE*/
+			/*TEST NEW STUFF HERE*/
+
+			function supress(){
+		document.querySelector( "form" )
+        .addEventListener( "invalid", function( event ) {
+            event.preventDefault();
+        }, true );
+
+			}
+
+
+			function jump(identifier){
+			document.getElementById('dynamicText').innerHTML=show(identifier);
+			var nav_titles = document.getElementsByClassName("nav_titles");
+				for( var i = 0; i<nav_titles.length; i++) nav_titles[i].classList.remove("active");
+			}
+
+
+
+		</script>
+
+	</body>
+</html>
